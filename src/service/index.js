@@ -13,6 +13,7 @@ export default {
     getProducts(){
         return new Promise((resolve, reject) => {
 
+
             setTimeout(function () {
                 resolve(_products);
             },100);
