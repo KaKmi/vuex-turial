@@ -1,36 +1,19 @@
 <template>
-  <div id="app">
-    <h3>Increment:</h3>
-    <increment></increment>
-    <h3>Counter:</h3>
-    <counter></counter>
-    <Counterr></Counterr>
-    <!--<img class="logo" src="./assets/logo.png">-->
-    <!--<hello></hello>-->
+  <div class="app">
+    <h1>Shopping Cart Example</h1>
+    <hr>
+    <h2>Products</h2>
+    <product-list></product-list>
+    <hr>
+    <cart></cart>
   </div>
 </template>
 
 <script>
-//import Hello from './components/Hello'
-import Increment from './components/IncrementButton.vue'
-import Counterr from './components/CounterDisplay2.vue'
-import Counter from './components/CounterDisplay.vue'
-export default {
-  components: {
-    Increment,
-    Counter,
-    Counterr
-  },
-  events:{
-    'button-pressed': function () {
-       this.$broadcast('increment');
-    }
-  }
-}
-</script>
+  import ProductList from './components/ProductList.vue'
+  import Cart from './components/Cart.vue'
 
-<style>
-body {
-  font-family: Helvetica, sans-serif;
-}
-</style>
+  export default {
+    components: { ProductList, Cart }
+  }
+</script>

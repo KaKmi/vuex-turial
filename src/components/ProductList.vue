@@ -13,5 +13,23 @@
 </template>
 
 <script type="text/ecmascript-6">
-
+    import store from '../store';
+    const { getAllProducts, addToCart } = store.actions
+    export  default{
+        computed:{
+            products(){
+                return store.state.products
+            }
+        },
+        created(){
+            getAllProducts()
+        },
+        methods:{
+            addToCart(product){
+                if (product.inventory > 0) {
+                    store.actions.addToCart(product.id)
+                }
+            }
+        }
+    }
 </script>

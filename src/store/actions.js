@@ -1,12 +1,10 @@
 /**
  * Created by Jared on 16/1/5.
  */
-import shop from '../service';
+import shop from '../service/index';
 import * as types from './mutation-types';
 
-export  const  addToCart = ({dispatch,state}) =>{
-    dispatch(types.RECEIVE_PRODUCTS);
-}
+export const addToCart = types.ADD_TO_CART
 
 export const  checkout =({dispatch,state})=>{
     const savedCartItems = [...state.cart.added];
@@ -19,3 +17,9 @@ export const  checkout =({dispatch,state})=>{
 
 }
 
+
+export  const  getAllProducts =({dispatch})=>{
+    shop.getProducts().then(function (products) {
+        dispatch(types.RECEIVE_PRODUCTS,products)
+    })
+}

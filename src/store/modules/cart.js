@@ -13,7 +13,7 @@ import {
  * initial state
  * @type {Array}
  */
-export  const cartInitaialState={
+export  const cartInitialState={
     added:[],
     lastCheckOut:null
 };
