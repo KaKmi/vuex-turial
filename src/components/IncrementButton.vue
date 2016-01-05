@@ -19,8 +19,11 @@
 //                this.$dispatch('button-pressed')
 
                 // sharedStore
-                store.increment()
+//                store.increment()
 //                this.sharedState.counter+=1;
+
+                //vuex
+                store.dispatch('INCREMENT');
                 console.log('+1 Pressed')
             }
         }
